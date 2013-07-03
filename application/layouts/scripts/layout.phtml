@@ -1,0 +1,84 @@
+<?php
+	$this->headMeta()
+		->appendName('viewport', 'width=device-width, initial-scale=1.0');
+	$this->headTitle()
+		->setSeparator(': ');
+	$this->headLink()->prependStylesheet($this->baseUrl('/css/app.css'));
+	$this->headScript()->prependFile($this->baseUrl('/js/app.js'));
+
+	// Apply libraries in opposite order required, as each gets prepended before the next.
+	
+	// Bootstrap
+	$this->headLink()->prependStylesheet($this->baseUrl('/library/bootstrap/css/bootstrap.min.css'));
+	$this->headScript()->prependFile($this->baseUrl('/library/bootstrap/js/bootstrap.min.js'));
+
+	// Data Tables
+	$this->headLink()->prependStylesheet($this->baseUrl('/library/dataTables/css/demo_table_jui.css'));
+	$this->headScript()
+		->prependFile($this->baseUrl('/library/dataTables/js/jquery.dataTables.min.js'))
+		->prependFile($this->baseUrl('/library/naturalSort.js'));
+
+	// JQuery UI
+	$this->headLink()->prependStylesheet($this->baseUrl('/library/jquery-ui/css/smoothness/jquery-ui-1.8.18.custom.css'));
+	$this->headScript()->prependFile('https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js');
+
+	// JQuery
+	$this->headScript()->prependFile('https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js');
+
+	/** @todo Use a application environment config to specify if JS should be minified. */
+?>
+<?php echo $this->doctype(), "\n"; ?>
+<html lang="en">
+	<head>
+		<?php echo $this->headMeta(), "\n"; ?>
+		<?php echo $this->headTitle(), "\n"; ?>
+		<?php echo $this->headStyle(), "\n"; ?>
+		<?php echo $this->headLink(), "\n"; ?>
+		<?php echo $this->headScript(), "\n"; ?>
+		<?php echo $this->navigation()->links(); ?>
+
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+<?php if (count($this->navigation()->getContainer())): ?>
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<?php echo $this->navigation()->menu()->setMinDepth(0)->setMaxDepth(0)->setOnlyActiveBranch(1)->setRenderParents(false); ?>
+				</div>
+			</div>
+		</div>
+<?php endif; ?>
+
+<?php
+	/* @var $flashMessenger Zend_Controller_Action_Helper_FlashMessenger */
+	$flashMessenger = Zend_Controller_Action_HelperBroker::getStaticHelper('FlashMessenger');
+	$messages = array();
+	if ($flashMessenger->hasMessages()) $messages = $messages + $flashMessenger->getMessages();
+	if ($flashMessenger->hasCurrentMessages()):
+		$messages = $messages + $flashMessenger->getCurrentMessages();
+		$flashMessenger->clearCurrentMessages();
+	endif;
+
+	if (!empty($messages)):
+?>
+		<div class="alert">
+			<a class="close" data-dismiss="alert">×</a>
+			<ul>
+<?php foreach ($messages as $message): ?>
+				<li><?php echo $this->escape($message); ?></li>
+<?php endforeach; ?>
+			</ul>
+		</div>
+<?php endif; ?>
+
+		<div class="container">
+			<?php echo $this->layout()->content, "\n"; ?>
+		</div>
+
+		<?php echo $this->inlineScript(), "\n"; ?>
+	</body>
+</html>

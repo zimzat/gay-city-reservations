@@ -1,0 +1,173 @@
+/********** GENERAL FORMATTING **********/
+
+@font-face { font-family: Futura; src: url(https://www.gaycity.org/fonts/Futura-Book.otf)}
+@font-face { font-family: FuturaCondensed; src: url(https://www.gaycity.org/fonts/Futura-Condensed.otf)}
+@font-face { font-family: FuturaBold; src: url(https://www.gaycity.org/fonts/Futura-Bold.otf)}
+@font-face { font-family: FuturaItalic; src: url(https://www.gaycity.org/fonts/Futura-BookOblique.otf)}
+
+
+
+* 		{margin: 10px 0; 
+			padding: 0;
+			}
+
+
+
+body 		{margin: 0;
+			padding: 0;
+			background: #fff;
+			/*background: #4F4D8E;*/
+			color: #000;
+                        font-size: 12px;
+			font-family: Futura;
+                        line-height: 16px;
+                        text-align: center;
+			overflow: scroll;
+			}
+
+.btn		{padding:30px;
+			color: #fff;
+			font-family:FuturaBold;
+			background-color:#b5050e;
+			border:none;
+ 			text-transform: uppercase;
+			text-decoration: none;
+			}		
+
+p		{padding-bottom: 24px; padding-right:24px; text-align:left;
+			}
+
+img:link, a img {border: 0;
+			}
+
+ul, ol	 	{list-style-position: outside;
+			list-style-type: square;
+			padding-left: 25px;
+			padding-bottom: 24px;
+			}
+
+li			{text-align:left;
+			font-family:FuturaBold;
+			background:#b5050e;
+                        color: #fff;
+			padding:30px;
+			margin:30px 40px 30px 30px;
+                        line-height: 16px;
+			width:200px;
+			}
+
+
+li a			{font:12px;
+			text-align:left;
+ 			text-transform: uppercase;
+			background:#b5050e;
+                        color: #fff;
+                        line-height: 16px;
+			}
+
+			
+.button, .button a	{padding:30px;
+			color: #fff;
+			font-family:FuturaBold;
+ 			text-transform: uppercase;
+			text-decoration: none;
+			}
+
+
+
+/********** TEXT FORMATTING **********/	
+h1			{font-size:14px;
+			text-align:left;
+ 			text-transform: uppercase;
+			background:#000;
+                        color: #fff;
+			margin-bottom: 24px; 
+			padding:5px 0 5px 5px;
+                        line-height: 16px;	
+			}
+	
+.h1			{font-size:12px;
+			text-align:left;
+ 			text-transform: uppercase;
+			background:#000;
+                        color: #fff;
+			margin-bottom: 24px; 
+			padding:5px 0 5px 5px;	
+			}
+
+
+h2 			{font-size:14px;
+			text-align:left;
+ 			text-transform: uppercase;
+			background:#b5050e;
+                        color: #fff;
+			padding:10px 50px 10px 10px;
+			margin-bottom:5px;
+                        line-height: 16px;                 
+			}
+
+.h2			{font-size:14px;
+			text-align:left;
+ 			text-transform: uppercase;
+			background:#000;
+                        color: #fff;
+			padding:10px 50px 10px 10px;
+			margin-bottom:5px;
+                        line-height: 16px;
+			}
+
+h3              	{text-align:left;
+ 			text-transform: uppercase;
+			color: #000000;
+			}
+
+h4, h5, h6	{font: normal 1em; font-family: Futura;
+			padding-top: 0.5em;
+			color: #000000;
+			}
+
+a 			{color: #015172;
+			text-decoration: none;
+			font-family: FuturaBold;
+			text-align:left;
+			}
+
+a:hover		{text-decoration: underline;
+			}
+
+i			{font-family: FuturaItalic;}
+
+b 		{font-family: FuturaBold;}
+
+/********** FORMS **********/
+
+.inputName	{font: normal .8em arial, helvetica, sans-serif;
+			text-transform: uppercase;
+			color: #EA802C;
+			padding-bottom: 4px;
+			}
+						
+.inputField	{border-top: 1px solid #C3C3C3;
+			border-right: 1px solid #C3C3C3;
+			border-bottom: 1px solid #DDDDDD;
+			border-left: 1px solid #DDDDDD;
+			font: normal 11px/14px arial, helvetica, sans-serif;
+			height: 16px;
+			padding-left: 3px;
+			}
+
+.inputTextarea {border-top: 1px solid #C3C3C3;
+			border-right: 1px solid #C3C3C3;
+			border-bottom: 1px solid #DDDDDD;
+			border-left: 1px solid #DDDDDD;
+			font: normal 11px/15px arial, helvetica, sans-serif;
+			padding-left: 3px;
+			}
+
+/********** STRUCTURE **********/
+
+#container 	{width: 695px;
+			overflow: hidden;
+			background:#fff;
+			text-align:left;
+			}

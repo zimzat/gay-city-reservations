@@ -1,0 +1,16 @@
+
+<p>Please select an appointment type:</p>
+
+<ul>
+<?php foreach ($this->types as $type): ?>
+	<li>
+		<a href="<?php echo $this->urlSimple('select-date', 'reservation', null, array('type' => $type)); ?>"><?php echo $this->escape($type); ?></a>
+<?php if (!empty($this->typeDescriptions[$type])): ?>
+		(<?php echo $this->escape($this->typeDescriptions[$type]); ?>)
+<?php endif; ?>
+	</li>
+<?php endforeach; ?>
+<?php if (empty($this->types)): ?>
+	<li>No appointments are available at this time.</li>
+<?php endif; ?>
+</ul>

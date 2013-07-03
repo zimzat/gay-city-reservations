@@ -1,0 +1,12 @@
+<p>Please select which calendar to use:</p>
+
+<ul>
+<?php foreach ($this->calendarList['items'] as $calendar): ?>
+	<li>
+		<a href="<?php echo $this->urlSimple('imprint', 'index') . '?calendarId=' . urlencode($calendar['id']); ?>"><?php echo $this->escape($calendar['summary']); ?></a>
+<?php if (!empty($calendar['description'])): ?>
+		<?php echo $this->escape($calendar['description']); ?>
+<?php endif; ?>
+	</li>
+<?php endforeach; ?>
+</ul>

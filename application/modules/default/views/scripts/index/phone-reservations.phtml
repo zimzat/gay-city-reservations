@@ -1,0 +1,14 @@
+
+<h2>Upcoming Appointments with Phone Reminders</h2>
+
+<?php foreach ($this->eventDetails as $details): ?>
+<?php list($start, $end) = explode('-', $details['time']); ?>
+<p>
+	<b>Name:</b> <?php echo $this->escape($details['name']); ?><br />
+	<b>Phone:</b> <?php echo $details['phone']; ?><br />
+	<b>Phone Message Consent:</b> <?php echo !empty($details['phoneMessageConsent']) ? 'Yes' : 'No'; ?><br />
+	<b>Type:</b> <?php echo $this->escape($details['type']); ?><br />
+	<b>Date:</b> <?php echo date('F jS, l', strtotime($details['date'])); ?><br />
+	<b>Time:</b> <?php echo date('g:ia', strtotime($start)); ?>
+</p>
+<?php endforeach; ?>

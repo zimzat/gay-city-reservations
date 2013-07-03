@@ -1,0 +1,33 @@
+<?php list($start, $end) = explode('-', $this->time); ?>
+
+<style type="text/css">
+	dt label {
+		font-weight: bold;
+	}
+</style>
+
+<p>
+	<b>Date:</b> <?php echo date('F jS, l', strtotime($this->date)); ?>
+		<a href="<?php echo $this->urlSimple('select-date', 'reservation'); ?>">(change)</a><br />
+	<b>Time:</b> <?php echo date('g:ia', strtotime($start)); ?>
+		<a href="<?php echo $this->urlSimple('select-time', 'reservation', null, array('date' => $this->date)); ?>">(change)</a>
+</p>
+
+<?php echo $this->form; ?>
+
+<script type="text/javascript">
+(function($) {
+	$(function() {
+		$('#phoneMessageConsent-element, #phoneMessageConsent-label')[($('#phone').val() != '') ? 'show' : 'hide']();
+
+		$('#phone').on('change blur keyup', function() {
+			$('#contactMethod option[value=phone]')[($(this).val() != '') ? 'show' : 'hide']();
+			$('#phoneMessageConsent-element, #phoneMessageConsent-label')[($(this).val() != '') ? 'fadeIn' : 'fadeOut']();
+		}).change();
+
+		$('#email').on('change blur keyup', function() {
+			$('#contactMethod option[value=email]')[($(this).val() != '') ? 'show' : 'hide']();
+		}).change();
+	});
+})(window.jQuery);
+</script>

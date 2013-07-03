@@ -1,0 +1,12 @@
+
+<p>Please select an appointment date:</p>
+
+<?php if ($this->dates): ?>
+<ul>
+<?php natsort($this->dates); foreach ($this->dates as $date): ?>
+	<li><a href="<?php echo $this->urlSimple('select-time', 'reservation', null, array('date' => $date)); ?>"><?php echo date('F jS, l', strtotime($date)); ?></a></li>
+<?php endforeach; ?>
+</ul>
+<?php else: ?>
+<i>There are no dates available.</i>
+<?php endif; ?>

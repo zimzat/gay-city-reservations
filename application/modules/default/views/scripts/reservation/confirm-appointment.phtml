@@ -1,0 +1,29 @@
+<?php list($start, $end) = explode('-', $this->details['time']); ?>
+
+<?php if (!empty($this->reminder)): ?>
+<p>This is a reminder of your upcoming appointment. Your appointment details can be reviewed below.</p>
+<?php endif; ?>
+
+<h2>Appointment</h2>
+<p>
+	<b>Type:</b> <?php echo $this->escape($this->details['type']); ?><br />
+	<b>Date:</b> <?php echo date('F jS, l', strtotime($this->details['date'])); ?><br />
+	<b>Time:</b> <?php echo date('g:ia', strtotime($start)); ?>
+</p>
+
+<h2>Contact</h2>
+<p>
+	<b>Name:</b> <?php echo $this->escape($this->details['name']); ?><br />
+<?php if (!empty($this->details['phone'])): ?>
+	<b>Phone:</b> <?php echo $this->details['phone']; ?><br />
+	<b>Phone Message Consent:</b> <?php echo !empty($this->details['phoneMessageConsent']) ? 'Yes' : 'No'; ?><br />
+<?php endif; ?>
+<?php if (!empty($this->details['email'])): ?>
+	<b>Email:</b> <?php echo $this->escape($this->details['email']); ?><br />
+<?php endif; ?>
+	<b>Contact Method:</b> <?php echo empty($this->details['contactMethod']) ? 'None' : ucfirst($this->details['contactMethod']); ?>
+</p>
+
+<p>
+	If you need to cancel or change your appointment please contact us directly at 206-860-6969.
+</p>

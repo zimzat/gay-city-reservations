@@ -1,0 +1,13 @@
+
+<p>
+	<b>Date:</b> <?php echo date('F jS, l', strtotime($this->date)); ?>
+		<a href="<?php echo $this->urlSimple('select-date', 'reservation'); ?>">(change)</a><br />
+</p>
+
+<p>Please select an appointment time:</p>
+
+<ul>
+<?php foreach ($this->times as $time): list($start, $end) = explode('-', $time, 2); ?>
+	<li><a href="<?php echo $this->urlSimple('select-details', 'reservation', null, array('date' => $this->date, 'time' => $time)); ?>"><?php echo date('g:ia', strtotime($start)); ?></a></li>
+<?php endforeach; ?>
+</ul>

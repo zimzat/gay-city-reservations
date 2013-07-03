@@ -1,0 +1,38 @@
+<h2>Guidelines for testing at Gay City Health Project:</h2>
+
+<p><i>(please check off each statement below after reading)</i></p>
+
+<form method="POST">
+<p>
+	<label class="form-inline" for="disclaimer-0">
+	<?php echo $this->formCheckbox('disclaimer[0]', null, array('checked' => !empty($_POST['disclaimer'][0]))); ?>
+	Testing services at Gay City's Wellness Center are for gay/bisexual men; men who have sex with men; and transgender people who have sex with men. If none of these apply to you, consider testing at <a href="http://www.gaycity.org/outreachtesting/">one of our outreach locations</a>.
+	</label>
+</p>
+
+<p>
+	<label class="form-inline" for="disclaimer-1">
+	<?php echo $this->formCheckbox('disclaimer[1]', null, array('checked' => !empty($_POST['disclaimer'][1]))); ?>
+	We test for HIV, Syphilis, and in some cases Gonorrhea, Chlamydia, and Hepatitis C.  A test counselor will help you determine which tests are right for you.
+	</label>
+</p>
+
+<p>
+	<label class="form-inline" for="disclaimer-2">
+	<?php echo $this->formCheckbox('disclaimer[2]', null, array('checked' => !empty($_POST['disclaimer'][2]))); ?>
+	Gay City does not provide symptom diagnosis or treatment.  If you're experiencing ANY symptoms that you suspect may be a sexually transmitted infection, we encourage you to contact <a href="http://uwmedicine.washington.edu/patient-care/our-services/find-a-clinic/pages/clinic.aspx?clinicid=244">Harborview STD Clinic</a> or your primary care physician.
+	</label>
+</p>
+
+<p>
+	<label class="form-inline" for="disclaimer-3">
+	<?php echo $this->formCheckbox('disclaimer[3]', null, array('checked' => !empty($_POST['disclaimer'][3]))); ?>
+	To increase the accuracy of test results, we recommend waiting 14 days between your last possible exposure and your test date. Please make sure you account for these 14 days when you are choosing an appointment time.</br />
+	<i>For example, if I had unprotected sex on February 2nd, I should wait until at least February 16th before I get tested.</i>
+	</label>
+</p>
+
+<p style="text-align: center;">
+	<button type="submit" class="btn btn-success btn-large">I understand the testing guidelines & would like to schedule an appointment.</button>
+<p>
+</form>
